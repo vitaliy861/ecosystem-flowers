@@ -41,7 +41,6 @@
 | **EfficientNetB0** | ImageNet | `tf.keras.applications.EfficientNetB0(weights='imagenet')` (Keras/TensorFlow) |
 
 - Документация: https://keras.io/api/applications/efficientnet/
-- Статья: https://arxiv.org/abs/1905.11946
 
 EfficientNetB0 даёт баланс между точностью и вычислительными затратами, подходит для transfer learning при ограниченном объёме данных. Предобучена на ImageNet; последние слои заменяются на классификатор под 5 классов цветов, часть свёрточных слоёв замораживается, остальные дообучаются на датасете цветов.
 
