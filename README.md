@@ -59,5 +59,15 @@ EfficientNetB0 даёт баланс между точностью и вычис
 └── results/          # результаты обучения 
 
 Датасет в репозиторий не загружается; ссылка на него — в разделе 3.
+```
+6. Установка и запуск
+Требования: Python 3.8+
+Запуск выполнялся в google collab
+
+pip install -r requirements.txt
+Датасет размещается в data/flowers/ с подпапками daisy, dandelion, roses, sunflowers, tulips  В ноутбуке путь задаётся переменной DATA_DIR (по умолчанию data/flowers).
+
+ flower_classification.ipynb в Jupyter или в среде с поддержкой ноутбуков  загрузка данных, сборка модели на базе EfficientNetB0, обучение (веса сохраняются в checkpoints/), оценка (classification_report, confusion matrix), визуализация, примеры предсказаний с порогом уверенности, модуль подсчёта объектов.
+
 
 
