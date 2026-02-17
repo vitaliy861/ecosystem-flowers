@@ -70,8 +70,6 @@ EfficientNetB0 даёт баланс между точностью и вычис
 ```
 ## 7. Итоги результатов обучения
 
-Результаты обучения из ноутбука **1flower_classification.ipynb** ([Colab](https://colab.research.google.com/drive/1NB5J82KbgKjs-TjX7L9at0oYtrU45-hj?usp=sharing)); актуальные данные в папке **results/** соответствуют этому ноутбуку:
-
 - **Accuracy на валидации:** **35.35%** (датасет Flowers Recognition).
 - **По классам:** лучше всего распознаются **dandelion** (recall 0.78) и **tulip** (recall 0.71); у **daisy**, **rose** и **sunflower** recall 0 — модель предсказывает только dandelion и tulip.
 - **Матрица ошибок:** по диагонали 164 правильных для dandelion и 140 для tulip; остальные классы в основном ошибочно предсказаны как dandelion или tulip.
