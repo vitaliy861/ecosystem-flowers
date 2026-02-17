@@ -60,14 +60,25 @@ EfficientNetB0 даёт баланс между точностью и вычис
 
 Датасет в репозиторий не загружается; ссылка на него — в разделе 3.
 ```
-6. Установка и запуск
-Требования: Python 3.8+
-Запуск выполнялся в google collab
+## 7. Итоги результатов обучения
 
-pip install -r requirements.txt
-Датасет размещается в data/flowers/ с подпапками daisy, dandelion, roses, sunflowers, tulips  В ноутбуке путь задаётся переменной DATA_DIR (по умолчанию data/flowers).
+Результаты обучения (см. [ноутбук в Colab с выводом](https://colab.research.google.com/drive/1NB5J82KbgKjs-TjX7L9at0oYtrU45-hj?usp=sharing)):
 
- flower_classification.ipynb в Jupyter или в среде с поддержкой ноутбуков  загрузка данных, сборка модели на базе EfficientNetB0, обучение (веса сохраняются в checkpoints/), оценка (classification_report, confusion matrix), визуализация, примеры предсказаний с порогом уверенности, модуль подсчёта объектов.
+- **Accuracy на валидации:** ~24% (при 10 эпохах, датасет Flowers Recognition).
+- **По классам:** лучше всего распознаются **dandelion** (recall ~0.51) и **tulips** (recall ~0.50); **roses**, **daisy** и **sunflowers** — низкий recall (модель часто путает их с другими классами).
+- **Матрица ошибок:** наибольшие путаницы — предсказание dandelion или tulips для изображений других классов; по диагонали (правильные предсказания) видно перекос в пользу dandelion и tulips.
+
+В папке **results/** (или в выводе ноутбука в Colab) сохраняются: **classification_report.txt**, **confusion_matrix.png**, **training_curves.png** — общая точность, precision/recall/f1 по классам и графики обучения.
+
+---
+
+## 8. Итоги и выводы
+
+- Модель **EfficientNetB0** дообучена на 5 классах цветов (daisy, dandelion, roses, sunflowers, tulips); веса сохраняются в **checkpoints/**.
+- **Classification report** и **confusion matrix** показывают: точность на валидации ~24%; сильнее всего модель склонна предсказывать dandelion и tulips; классы daisy, roses и sunflowers часто путаются с другими.
+- Для мониторинга экосистем при **уверенности ниже порога 0.75** в ноутбуке помечается «проверка!» — рекомендуется ручная проверка специалистом.
+- **Модуль подсчёта объектов** (раздел 9 ноутбука и **scripts/count_objects.py**) даёт оценку по одному кадру; при необходимости его можно расширить на скользящее окно по большому изображению.
+уверенности, модуль подсчёта объектов.
 
 
 
