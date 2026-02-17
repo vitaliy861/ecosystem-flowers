@@ -60,7 +60,6 @@ EfficientNetB0 даёт баланс между точностью и вычис
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── flower_classification.ipynb
 ├── scripts/
 │   ├── README.md
 │   └── count_objects.py
