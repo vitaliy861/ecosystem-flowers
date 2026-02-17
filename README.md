@@ -64,7 +64,11 @@ EfficientNetB0 даёт баланс между точностью и вычис
 ├── scripts/
 │   ├── README.md
 │   └── count_objects.py
-└── results/          # результаты обучения 
+│ results/  # результаты обучения 
+    ├── README.md
+    ├── classification_report.txt
+    ├── confusion_matrix.png
+    └── training_curves.png      
 
 Датасет в репозиторий не загружается из за слишком высокого объема, ссылка на него — в разделе 3.
 ```
